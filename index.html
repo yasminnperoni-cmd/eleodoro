@@ -1,8 +1,5 @@
- HEAD
 <!DOCTYPE html>
 <html lang="pt-br">
-=======
->>>>>>> 44d2cdc1cc9ed27a79295dd4858272be405396da
 
 <head>
     <meta charset="UTF-8">
@@ -17,12 +14,14 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 16px;
-    
         }
         
-        article
-        {
+        article {
             display: flex;
+            flex-direction: column; /* Organiza o conteúdo do post verticalmente */
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 15px;
         }
 
         main {
@@ -32,12 +31,13 @@
             margin: 0 auto;
             padding: 16px;
         }
-    </style>
-    img{
-        width: 80px;
-        heigth: 80px; 
-    }
 
+        /* O estilo da imagem deve ficar dentro da tag <style> */
+        img {
+            width: 80px;
+            height: 80px; /* Corrigido de 'heigth' para 'height' */
+        }
+    </style>
 </head>
 
 <body>
@@ -47,58 +47,54 @@
     </header>
 
     <main>
+        <article>
+            <div>
+                <h2>Meu primeiro post</h2>
+                <p>por: Yasmin Peroni</p>
+                <p>
+                    Boas vindas ao meu novo blog! Aqui vou compartilhar dicas de programação
+                    e curiosidades da área de tecnologia.
+                </p>
+                <button class="btn-interacao">❤️ <span>0</span></button>
+                <button class="btn-interacao">👍 <span>0</span></button>
+            </div>
         </article>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Facebook_Like_button.svg/1280px-Facebook_Like_button.svg.png" width="80px" alt=""> 
-<main>
-</div>
-</main>
-        <div>
-        <h2>Meu primeiro post</h2>
 
-        <p>por: Yasmin Peroni</p>
-
-        <p>
-            Boas vindas ao meu novo blog! Aqui vou compartilhar dicas de programação
-            e curiosidades da área de tecnologia.
-            <button>❤️ <span>0</span></button>
-            <button>👍<span>0<span><button>
-        </p>
-        </div>
+        <article>
+            <div>
+                <h2>Meu segundo post</h2>
+                <p>por: Yasmin Peroni</p>
+                <p>
+                    Boas vindas ao meu novo blog! Aqui vou compartilhar dicas de programação
+                    e curiosidades da área de tecnologia.
+                </p>
+                <button class="btn-interacao">❤️ <span>0</span></button>
+                <button class="btn-interacao">👍 <span>0</span></button>
+            </div>
         </article>
-     <div>
-        <h2>Meu segundo post</h2>
-
-        <p>por: Yasmin Peroni</p>
-
-        <p>
-            Boas vindas ao meu novo blog! Aqui vou compartilhar dicas de programação
-            e curiosidades da área de tecnologia.
-            <button>❤️ <span>0</span></button>
-            <button>👍<span>0<span><button>
-        </p>
-        </div>
-        </article>
-    
     </main>
-</body>
+
 <script>
-    const botoes = document.querySelectorAll("button");
+    // Seleciona apenas os botões de interação
+    const botoes = document.querySelectorAll(".btn-interacao");
 
-    botoes.forEach function (botao)
+    botoes.forEach(function (botao) {
+        // Cada botão precisa ter seu próprio controle de "curtiu"
         let curtiu = false;
-     botao.addEventListener("click", botaoclicado)
-     function botaoclicado() 
-        console.log("fui clicado");
-      let texto = botao.querySelector("span");
-      if (curtiu === false) {
-     texto.textContent++;
-     curtiu = true;
-     } else{
-     texto.textContent--;
-     curtiu = false;
-    }
- 
 
+        botao.addEventListener("click", function botaoclicado() {
+            console.log("fui clicado");
+            let texto = botao.querySelector("span");
+            
+            if (curtiu === false) {
+                texto.textContent = parseInt(texto.textContent) + 1;
+                curtiu = true;
+            } else {
+                texto.textContent = parseInt(texto.textContent) - 1;
+                curtiu = false;
+            }
+        });
+    });
 </script>
-
+</body>
 </html>
