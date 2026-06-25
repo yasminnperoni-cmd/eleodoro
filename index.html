@@ -23,7 +23,7 @@
         article
         {
             display: flex;
-        }}
+        }
 
         main {
             background-color: #ffffff;
@@ -48,7 +48,7 @@
 
     <main>
         </article>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Facebook_Like_button.svg/1280px-Facebook_Like_button.svg.png" alt="">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Facebook_Like_button.svg/1280px-Facebook_Like_button.svg.png" width="80px" alt=""> 
 <main>
 </div>
 </main>
@@ -84,13 +84,20 @@
 <script>
     const botoes = document.querySelectorAll("button");
 
-    botoes.forEach(function(botao)
-    botão.addEventListener("click", botãoclicado)
-    function botãoclicado() {
+    botoes.forEach function (botao)
+        let curtiu = false;
+    botao.addEventListener("click", botaoclicado)
+    function botaoclicado() 
         console.log("fui clicado");
-let texto = botão.querySelector("span");
-texto.textContent++;
-    })
+ let texto = botao.querySelector("span");
+ if (curtiu === false) {
+    texto.textContent++;
+    curtiu = true;
+ } else{
+    texto.textContent--;
+    curtiu = false;
+ }
+
 
 </script>
 
