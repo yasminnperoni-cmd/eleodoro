@@ -5,7 +5,7 @@ header {
     background-color: #183C63;
     color: #FFFFFF;
     text-align: center;
-    
+
     margin: 0 auto;
     padding: 16px;
 }
@@ -16,10 +16,19 @@ main {
 
     margin: 0 auto;
     padding: 16px;
+
+    display: flex;
 }
 
 article {
     display: flex;
+
+
+    border: 1px solid #183C63 ;
+
+    margin: 16px;
+    gap: 16px;
+    padding: 16px;
 }
 
 img {
