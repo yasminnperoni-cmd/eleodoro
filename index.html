@@ -41,29 +41,23 @@
                 <button class="btn-interacao">👍 <span>0</span></button>
             </div>
         </article>
+
+
+        <article>
+            <div>
+                <h2>O "Bug" que era um bicho de verdade</h2>
+                <p>por: Yasmin Peroni</p>
+                <p>
+                    O termo "Bug" (inseto) para erros de software ficou famoso em 1947,
+                  quando engenheiros acharam uma mariposa dentro do computador de Harvard
+                  Mark II, causando uma falha no sistema.   
+                </p>
+                <button class="btn-interacao">❤️ <span>0</span></button>
+                <button class="btn-interacao">👍 <span>0</span></button>
+            </div>
+        </article>
     </main>
 
-<script>
-    // Seleciona apenas os botões de interação
-    const botoes = document.querySelectorAll(".btn-interacao");
-
-    botoes.forEach(function (botao) {
-        // Cada botão precisa ter seu próprio controle de "curtiu"
-        let curtiu = false;
-
-        botao.addEventListener("click", function botaoclicado() {
-            console.log("fui clicado");
-            let texto = botao.querySelector("span");
-            
-            if (curtiu === false) {
-                texto.textContent = parseInt(texto.textContent) + 1;
-                curtiu = true;
-            } else {
-                texto.textContent = parseInt(texto.textContent) - 1;
-                curtiu = false;
-            }
-        });
-    });
-</script>
+ <script src="script.js"></script>
 </body>
 </html>
