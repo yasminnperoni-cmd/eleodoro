@@ -1,8 +1,7 @@
-// Seleciona apenas os botões de interação
+
     const botoes = document.querySelectorAll(".btn-interacao");
 
     botoes.forEach(function (botao) {
-        // Cada botão precisa ter seu próprio controle de "curtiu"
         let curtiu = false;
 
         botao.addEventListener("click", function botaoclicado() {
@@ -18,3 +17,16 @@
             }
         });
     });
+
+    const btnTemaEscuro = ocument.querySelector(".btn-tema-escuro");
+
+    btnTemaEscuro.addEventListener ("click", mudatema);
+
+    function mudatema() {
+        const corpopagina = document.body;
+        if (corpopagina.classlist.contains("tema-escuro")) {
+            corpopagina.classlist.remove("tema-escuro");
+        } else {
+            corpopagina.classlist.add ("tema-escuro");
+        }
+    }
